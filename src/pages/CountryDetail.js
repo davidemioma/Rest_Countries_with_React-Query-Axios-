@@ -13,8 +13,6 @@ function CountryDetail() {
     getCountryDetail(id)
   );
 
-  console.log(data);
-
   if (isLoading) {
     return (
       <div className="centered">
