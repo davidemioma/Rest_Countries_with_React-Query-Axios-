@@ -5,9 +5,7 @@ const axios = require("axios").default;
 export async function getAllCountries() {
   const res = await axios.get(`${API_DOMAIN}/all`);
 
-  const data = res.data;
-
-  const results = data.map((country) => {
+  const results = res.data.map((country) => {
     return {
       id: country.name,
       name: country.name,
@@ -24,7 +22,7 @@ export async function getAllCountries() {
 export async function getCountryDetail(name) {
   const res = await axios.get(`${API_DOMAIN}/name/${name}`);
 
-  const data = await res.data;
+  const data = res.data;
 
   const result = {
     flag: data[0].flag,
