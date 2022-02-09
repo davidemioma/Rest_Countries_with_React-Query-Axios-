@@ -1,0 +1,50 @@
+.filter span,
+.filter ul {
+  width: 60%;
+}
+
+.filter span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.filter button {
+  display: inline-flex;
+  align-items: center;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.filter ul {
+  position: fixed;
+  padding: 1rem;
+  list-style: none;
+}
+
+.filter ul li {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .filter span {
+    font-size: 1.8rem;
+  }
+
+  .filter button img {
+    width: 30px;
+  }
+
+  .filter ul a {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .filter span,
+  .filter ul {
+    width: 90%;
+  }
+}
