@@ -22,20 +22,20 @@ export async function getAllCountries() {
 export async function getCountryDetail(name) {
   const res = await axios.get(`${API_DOMAIN}/name/${name}`);
 
-  const data = res.data;
+  const data = res.data[0];
 
   const result = {
-    flag: data[0].flag,
-    name: data[0].name,
-    nativeName: data[0].nativeName,
-    population: data[0].population,
-    region: data[0].region,
-    subregion: data[0].subregion,
-    capital: data[0].capital,
-    topLevelDomain: data[0].topLevelDomain.map((e) => e),
-    languages: data[0].languages.map((language) => language.name),
-    currencies: data[0].currencies.map((currency) => currency.code),
-    borders: data[0].borders.map((border) => border),
+    flag: data.flag,
+    name: data.name,
+    nativeName: data.nativeName,
+    population: data.population,
+    region: data.region,
+    subregion: data.subregion,
+    capital: data.capital,
+    topLevelDomain: data.topLevelDomain.map((e) => e),
+    languages: data.languages.map((language) => language.name),
+    currencies: data.currencies.map((currency) => currency.code),
+    borders: data.borders.map((border) => border),
   };
 
   return result;
